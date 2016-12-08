@@ -5,3 +5,14 @@ How it works:
 Find out all webrtc header files and jsoncpp header files(You can collect all the other third_party header files as you want).
 
 Find out all the object files(\*.o), remove those for testing(This may look ugly), finally using ar to merge them into one static lib(libwebrtc_full.a).
+
+How to enable H264:
+
+If you build on out/Default
+
+Write the following in args.gn:
+
+	is_debug = false
+	proprietary_codecs = true
+	rtc_use_h264 = true
+	ffmpeg_branding = "Chrome"
